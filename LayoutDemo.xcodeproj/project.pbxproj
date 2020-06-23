@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B36E50D249D2BC500B7688F /* alignment-guides-tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E50C249D2BC500B7688F /* alignment-guides-tool.swift */; };
+		7B36E50F249F4A6200B7688F /* SwiftUIViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E50E249F4A6200B7688F /* SwiftUIViewC.swift */; };
+		7B36E511249FB88F00B7688F /* SwiftUIViewH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E510249FB88F00B7688F /* SwiftUIViewH.swift */; };
+		7B36E51324A0868400B7688F /* SwiftUIViewJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51224A0868400B7688F /* SwiftUIViewJ.swift */; };
+		7B36E51524A0F1D800B7688F /* SwiftUIViewK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51424A0F1D800B7688F /* SwiftUIViewK.swift */; };
+		7B36E51724A1EDAE00B7688F /* SwiftUIViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51624A1EDAE00B7688F /* SwiftUIViewM.swift */; };
+		7B36E51924A1EEF000B7688F /* DNANightNanny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51824A1EEF000B7688F /* DNANightNanny.swift */; };
+		7B36E51B24A1EF6F00B7688F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51A24A1EF6F00B7688F /* Colors.swift */; };
+		7B36E51D24A1F01000B7688F /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51C24A1F01000B7688F /* Icons.swift */; };
+		7B36E51F24A2074600B7688F /* PieArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51E24A2074600B7688F /* PieArcView.swift */; };
+		7B36E52124A209F100B7688F /* ConfigureButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E52024A209F100B7688F /* ConfigureButtonView.swift */; };
+		7B36E52324A20DD100B7688F /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E52224A20DD100B7688F /* TimerButtonView.swift */; };
 		7B79F693249AABC600C7A2B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F692249AABC600C7A2B3 /* AppDelegate.swift */; };
 		7B79F695249AABC600C7A2B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F694249AABC600C7A2B3 /* SceneDelegate.swift */; };
 		7B79F697249AABC600C7A2B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F696249AABC600C7A2B3 /* ContentView.swift */; };
@@ -16,6 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B36E50C249D2BC500B7688F /* alignment-guides-tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "alignment-guides-tool.swift"; sourceTree = "<group>"; };
+		7B36E50E249F4A6200B7688F /* SwiftUIViewC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIViewC.swift; sourceTree = "<group>"; };
+		7B36E510249FB88F00B7688F /* SwiftUIViewH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewH.swift; sourceTree = "<group>"; };
+		7B36E51224A0868400B7688F /* SwiftUIViewJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewJ.swift; sourceTree = "<group>"; };
+		7B36E51424A0F1D800B7688F /* SwiftUIViewK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewK.swift; sourceTree = "<group>"; };
+		7B36E51624A1EDAE00B7688F /* SwiftUIViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewM.swift; sourceTree = "<group>"; };
+		7B36E51824A1EEF000B7688F /* DNANightNanny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNANightNanny.swift; sourceTree = "<group>"; };
+		7B36E51A24A1EF6F00B7688F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7B36E51C24A1F01000B7688F /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		7B36E51E24A2074600B7688F /* PieArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieArcView.swift; sourceTree = "<group>"; };
+		7B36E52024A209F100B7688F /* ConfigureButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonView.swift; sourceTree = "<group>"; };
+		7B36E52224A20DD100B7688F /* TimerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
 		7B79F68F249AABC600C7A2B3 /* LayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B79F692249AABC600C7A2B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B79F694249AABC600C7A2B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +82,20 @@
 			children = (
 				7B79F692249AABC600C7A2B3 /* AppDelegate.swift */,
 				7B79F694249AABC600C7A2B3 /* SceneDelegate.swift */,
+				7B36E51A24A1EF6F00B7688F /* Colors.swift */,
+				7B36E50C249D2BC500B7688F /* alignment-guides-tool.swift */,
 				7B79F696249AABC600C7A2B3 /* ContentView.swift */,
 				7B79F698249AABCC00C7A2B3 /* Assets.xcassets */,
+				7B36E50E249F4A6200B7688F /* SwiftUIViewC.swift */,
+				7B36E510249FB88F00B7688F /* SwiftUIViewH.swift */,
+				7B36E51224A0868400B7688F /* SwiftUIViewJ.swift */,
+				7B36E51424A0F1D800B7688F /* SwiftUIViewK.swift */,
+				7B36E51624A1EDAE00B7688F /* SwiftUIViewM.swift */,
+				7B36E52224A20DD100B7688F /* TimerButtonView.swift */,
+				7B36E52024A209F100B7688F /* ConfigureButtonView.swift */,
+				7B36E51E24A2074600B7688F /* PieArcView.swift */,
+				7B36E51C24A1F01000B7688F /* Icons.swift */,
+				7B36E51824A1EEF000B7688F /* DNANightNanny.swift */,
 				7B79F69D249AABCC00C7A2B3 /* LaunchScreen.storyboard */,
 				7B79F6A0249AABCC00C7A2B3 /* Info.plist */,
 				7B79F69A249AABCC00C7A2B3 /* Preview Content */,
@@ -147,7 +183,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B79F693249AABC600C7A2B3 /* AppDelegate.swift in Sources */,
+				7B36E51B24A1EF6F00B7688F /* Colors.swift in Sources */,
+				7B36E52324A20DD100B7688F /* TimerButtonView.swift in Sources */,
+				7B36E51D24A1F01000B7688F /* Icons.swift in Sources */,
+				7B36E511249FB88F00B7688F /* SwiftUIViewH.swift in Sources */,
+				7B36E50F249F4A6200B7688F /* SwiftUIViewC.swift in Sources */,
+				7B36E51924A1EEF000B7688F /* DNANightNanny.swift in Sources */,
+				7B36E51724A1EDAE00B7688F /* SwiftUIViewM.swift in Sources */,
+				7B36E52124A209F100B7688F /* ConfigureButtonView.swift in Sources */,
+				7B36E51324A0868400B7688F /* SwiftUIViewJ.swift in Sources */,
 				7B79F695249AABC600C7A2B3 /* SceneDelegate.swift in Sources */,
+				7B36E51F24A2074600B7688F /* PieArcView.swift in Sources */,
+				7B36E50D249D2BC500B7688F /* alignment-guides-tool.swift in Sources */,
+				7B36E51524A0F1D800B7688F /* SwiftUIViewK.swift in Sources */,
 				7B79F697249AABC600C7A2B3 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
