@@ -27,7 +27,8 @@ let viewQX = viewMaxX * 0.25
 let viewQY = viewMaxY * 0.20
 let viewQZ = viewMaxY * 0.4
 let viewBZ = viewMaxY * 0.8
-let viewCalc = viewMaxY * 0.1
+let viewCalcY = viewMaxY * 0.1
+let viewCalcX = viewMaxX * 0.1
 
 struct mView: View {
   
@@ -203,7 +204,7 @@ struct mView: View {
                 self.newHeartY = viewQZ / bZoom
                 self.zoomHeart = bZoom
               }
-              print("self.viewCalc ",viewCalc )
+              
           }.scaleEffect(zoomHeart, anchor: zoomFocus)
           TimerBar()
             .opacity(fadeBar)
@@ -230,12 +231,14 @@ struct mView: View {
           }.position(CGPoint(x: newRainX, y: newRainY))
             .onAppear {
               self.zoomFocus = UnitPoint.topTrailing
+              
               withAnimation(.linear(duration: 1.0)) {
-                self.newRainX = viewMidX + 150
-                self.newRainY = 100
+                self.newRainX = viewCalcX * 8.35
+                self.newRainY = viewCalcY * 1.34
                 self.zoomRain = 3.0
+                self.fadeBar = 1
               }
-              print("self.newRainX ",self.newRainX,"self.newRainY" ,self.newRainY,"bZoom ",bZoom )
+              
           }.scaleEffect(zoomRain, anchor: zoomFocus)
           TimerBar()
             .opacity(fadeBar)
@@ -264,10 +267,12 @@ struct mView: View {
             .onAppear {
             self.zoomFocus = UnitPoint.bottomLeading
               withAnimation(.linear(duration: 1.0)) {
-                self.newWashingMachineX = 69
-                self.newWashingMachineY = 650
+                self.newWashingMachineX = viewCalcX * 1.65
+                self.newWashingMachineY = viewCalcY * 7.41
                 self.zoomWashingMachine = 3
+                self.fadeBar = 1
               }
+              
           }.scaleEffect(zoomWashingMachine, anchor: .bottomLeading)
           TimerBar()
             .opacity(fadeBar)
@@ -295,9 +300,10 @@ struct mView: View {
             .onAppear {
               self.zoomFocus = UnitPoint.bottomTrailing
               withAnimation(.linear(duration: 1.0)) {
-                self.newWindX = viewMidX + 150
-                self.newWindY = 650
+                self.newWindX = viewCalcX * 8.3
+                self.newWindY = viewCalcY * 7.41
                 self.zoomWind = 3
+                self.fadeBar = 1
               }
           }
           .scaleEffect(zoomWind, anchor: self.zoomFocus)
@@ -329,7 +335,7 @@ struct mView: View {
       ZStack {
         Image(systemName: "plus")
           .frame(width: 32, height: 32, alignment: .center)
-          .foregroundColor(Color.white)
+          .foregroundColor(Color.red)
           .position(x: viewMidX, y: viewQZ)
       }
     }
