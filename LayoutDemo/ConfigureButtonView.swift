@@ -43,11 +43,8 @@ struct ConfigureButtonView: View {
   
   var body: some View {
       return ZStack {
-//        if self.show {
           Button(action: {
-//              DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.action()
-//              }
           }) {
             self.image.font(Font.title.weight(.medium))
           }

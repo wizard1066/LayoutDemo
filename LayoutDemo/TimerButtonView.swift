@@ -75,7 +75,7 @@ struct TimerBar: View {
             TimerButtonView(pieSlice: 360, label: "10min", focus: 0.0) {
 //              self.viewModel.stopCurrentlyPlayingSound()
             }.padding(8)
-          }.padding(.top, 400)
+          }.padding(.top, 360)
   }
 }
 

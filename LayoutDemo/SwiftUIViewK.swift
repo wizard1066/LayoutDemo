@@ -9,40 +9,45 @@
 import SwiftUI
 
 struct kView: View {
-    @State var newView = false
-    @State var center: CGPoint = .zero
-    @State var extra: CGPoint = .zero
+  @State var newView = false
+  @State var center: CGPoint = .zero
+  @State var left: CGPoint = CGPoint(x: UIScreen.main.bounds.minX + 100, y: UIScreen.main.bounds.minY + 100)
+  @State var xPos: CGFloat = UIScreen.main.bounds.minX + 100
+  @State var yPos: CGFloat = UIScreen.main.bounds.minY + 100
+  @State var xPos2: CGFloat = UIScreen.main.bounds.minX + 100
+  @State var yPos2: CGFloat = UIScreen.main.bounds.minY + 100
+  @State var zoom:CGFloat = 1.0
+  
+  var body: some View {
+    ZStack {
     
-    var body: some View {
       ZStack {
-      ZStack {
+        Image(systemName: "circle")
+          .frame(width: 32, height: 32, alignment: .center)
+          .position(x: xPos2, y: yPos2)
+          .edgesIgnoringSafeArea(.all)
+      }.border(Color.red)
       
-        Image(systemName: "minus")
-          .frame(width: 32, height: 32, alignment: .center)
-          .background(InView(center: $extra))
-        
-        Image(systemName: "triangle")
-          .frame(width: 32, height: 32, alignment: .center)
-          .border(Color.yellow)
-          
-//          .background(InView(center: self.$center))
-//          .background(GeometryGetter(rect: $extra))
-          .onTapGesture {
-            self.newView = true
-          }.edgesIgnoringSafeArea(.all)
+      ZStack {
+        if !newView {
+          Image(systemName: "plus")
+            .frame(width: 32, height: 32, alignment: .center)
+            .position(x: xPos, y: yPos)
+            .animation(Animation.linear(duration: 2))
+            .onTapGesture {
+              withAnimation(.linear(duration: 2)) {
+                self.xPos = UIScreen.main.bounds.midX / 4
+                self.yPos = UIScreen.main.bounds.midY / 4
+                self.zoom = 4.0
+              }
+              
+          }.scaleEffect(zoom, anchor: .topLeading)
+            .edgesIgnoringSafeArea(.all)
+            .border(Color.red)
         }
-        
-        ZStack {
-          if self.newView {
-            Image(systemName: "circle")
-              .frame(width: 32, height: 32, alignment: .center)
-              .edgesIgnoringSafeArea(.all)
-              .position(self.extra)
-  //            .position(x: 207, y: 448)
-            }
-         }
-      }
+      }.border(Color.blue)
     }
+  }
 }
 
 struct GeometryGetter: View {
