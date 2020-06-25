@@ -89,11 +89,4 @@ struct CircularButtonView: View {
   }
 }
 
-struct BackgroundView: View {
-    var body: some View {
-      ZStack {
-        Color.black
-        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-      }
-    }
-}
+

@@ -32,9 +32,9 @@ let viewCalcX = viewMaxX * 0.1
 
 struct mView: View {
 
-  @State var testRun = false
-  @State var rainOffsetX:CGFloat = 0.0
-  @State var rainOffsetY:CGFloat = 0.0
+//  @State var testRun = false
+//  @State var rainOffsetX:CGFloat = 0.0
+//  @State var rainOffsetY:CGFloat = 0.0
   
   @ObservedObject var viewModel = ViewModels.soundPlayingViewModel
   
@@ -237,7 +237,6 @@ struct mView: View {
               }
             }
           }
-          .offset(x: rainOffsetX, y: rainOffsetY)
           .position(CGPoint(x: newRainX, y: newRainY))
           .rectReader($bottomRect, in: .named("main"))
             .onAppear {
@@ -350,13 +349,10 @@ struct mView: View {
         }.position(x: relocateNightNannyX, y: relocateNightNannyY)
       }
       ZStack {
-//        if testRun {
           Image(systemName: "plus")
             .frame(width: 32, height: 32, alignment: .center)
             .foregroundColor(Color.red)
             .position(x: viewMidX, y: viewQZ)
-//            .rectReader($bottomRect, in: .named("main"))
-//        }
       }
     }.coordinateSpace(name: "main")
   }

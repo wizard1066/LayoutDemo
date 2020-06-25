@@ -31,6 +31,8 @@ struct PositionReader: View {
 }
 
 struct nView: View {
+
+  
     @State var tag = 0
     @State var zoom:CGFloat = 1.0
     @State var relocate = false

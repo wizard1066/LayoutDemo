@@ -13,7 +13,7 @@
 		7B36E51324A0868400B7688F /* SwiftUIViewJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51224A0868400B7688F /* SwiftUIViewJ.swift */; };
 		7B36E51524A0F1D800B7688F /* SwiftUIViewK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51424A0F1D800B7688F /* SwiftUIViewK.swift */; };
 		7B36E51724A1EDAE00B7688F /* SwiftUIViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51624A1EDAE00B7688F /* SwiftUIViewM.swift */; };
-		7B36E51924A1EEF000B7688F /* DNANightNanny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51824A1EEF000B7688F /* DNANightNanny.swift */; };
+		7B36E51924A1EEF000B7688F /* CircularButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51824A1EEF000B7688F /* CircularButtonView.swift */; };
 		7B36E51B24A1EF6F00B7688F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51A24A1EF6F00B7688F /* Colors.swift */; };
 		7B36E51D24A1F01000B7688F /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51C24A1F01000B7688F /* Icons.swift */; };
 		7B36E51F24A2074600B7688F /* PieArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E51E24A2074600B7688F /* PieArcView.swift */; };
@@ -22,6 +22,8 @@
 		7B36E52524A23B4400B7688F /* NightNannyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E52424A23B4400B7688F /* NightNannyButton.swift */; };
 		7B36E52724A3347100B7688F /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E52624A3347100B7688F /* ViewModels.swift */; };
 		7B4F18DF24A48EE200815C8A /* SwiftUIViewN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F18DE24A48EE200815C8A /* SwiftUIViewN.swift */; };
+		7B4F18E124A4D61300815C8A /* SwiftUIViewO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F18E024A4D61300815C8A /* SwiftUIViewO.swift */; };
+		7B4F18E324A4DFFB00815C8A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F18E224A4DFFB00815C8A /* BackgroundView.swift */; };
 		7B79F693249AABC600C7A2B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F692249AABC600C7A2B3 /* AppDelegate.swift */; };
 		7B79F695249AABC600C7A2B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F694249AABC600C7A2B3 /* SceneDelegate.swift */; };
 		7B79F697249AABC600C7A2B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F696249AABC600C7A2B3 /* ContentView.swift */; };
@@ -37,7 +39,7 @@
 		7B36E51224A0868400B7688F /* SwiftUIViewJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewJ.swift; sourceTree = "<group>"; };
 		7B36E51424A0F1D800B7688F /* SwiftUIViewK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewK.swift; sourceTree = "<group>"; };
 		7B36E51624A1EDAE00B7688F /* SwiftUIViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewM.swift; sourceTree = "<group>"; };
-		7B36E51824A1EEF000B7688F /* DNANightNanny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNANightNanny.swift; sourceTree = "<group>"; };
+		7B36E51824A1EEF000B7688F /* CircularButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButtonView.swift; sourceTree = "<group>"; };
 		7B36E51A24A1EF6F00B7688F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7B36E51C24A1F01000B7688F /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		7B36E51E24A2074600B7688F /* PieArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieArcView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		7B36E52424A23B4400B7688F /* NightNannyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightNannyButton.swift; sourceTree = "<group>"; };
 		7B36E52624A3347100B7688F /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 		7B4F18DE24A48EE200815C8A /* SwiftUIViewN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewN.swift; sourceTree = "<group>"; };
+		7B4F18E024A4D61300815C8A /* SwiftUIViewO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewO.swift; sourceTree = "<group>"; };
+		7B4F18E224A4DFFB00815C8A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		7B79F68F249AABC600C7A2B3 /* LayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B79F692249AABC600C7A2B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B79F694249AABC600C7A2B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				7B36E51224A0868400B7688F /* SwiftUIViewJ.swift */,
 				7B36E51424A0F1D800B7688F /* SwiftUIViewK.swift */,
 				7B36E51624A1EDAE00B7688F /* SwiftUIViewM.swift */,
+				7B4F18E024A4D61300815C8A /* SwiftUIViewO.swift */,
 				7B4F18DE24A48EE200815C8A /* SwiftUIViewN.swift */,
 				7B36E52624A3347100B7688F /* ViewModels.swift */,
 				7B36E52424A23B4400B7688F /* NightNannyButton.swift */,
@@ -104,7 +109,8 @@
 				7B36E52024A209F100B7688F /* ConfigureButtonView.swift */,
 				7B36E51E24A2074600B7688F /* PieArcView.swift */,
 				7B36E51C24A1F01000B7688F /* Icons.swift */,
-				7B36E51824A1EEF000B7688F /* DNANightNanny.swift */,
+				7B36E51824A1EEF000B7688F /* CircularButtonView.swift */,
+				7B4F18E224A4DFFB00815C8A /* BackgroundView.swift */,
 				7B79F69D249AABCC00C7A2B3 /* LaunchScreen.storyboard */,
 				7B79F6A0249AABCC00C7A2B3 /* Info.plist */,
 				7B79F69A249AABCC00C7A2B3 /* Preview Content */,
@@ -192,14 +198,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B79F693249AABC600C7A2B3 /* AppDelegate.swift in Sources */,
+				7B4F18E124A4D61300815C8A /* SwiftUIViewO.swift in Sources */,
 				7B36E51B24A1EF6F00B7688F /* Colors.swift in Sources */,
 				7B36E52324A20DD100B7688F /* TimerButtonView.swift in Sources */,
 				7B4F18DF24A48EE200815C8A /* SwiftUIViewN.swift in Sources */,
 				7B36E51D24A1F01000B7688F /* Icons.swift in Sources */,
 				7B36E511249FB88F00B7688F /* SwiftUIViewH.swift in Sources */,
 				7B36E50F249F4A6200B7688F /* SwiftUIViewC.swift in Sources */,
-				7B36E51924A1EEF000B7688F /* DNANightNanny.swift in Sources */,
+				7B36E51924A1EEF000B7688F /* CircularButtonView.swift in Sources */,
 				7B36E51724A1EDAE00B7688F /* SwiftUIViewM.swift in Sources */,
+				7B4F18E324A4DFFB00815C8A /* BackgroundView.swift in Sources */,
 				7B36E52124A209F100B7688F /* ConfigureButtonView.swift in Sources */,
 				7B36E51324A0868400B7688F /* SwiftUIViewJ.swift in Sources */,
 				7B36E52724A3347100B7688F /* ViewModels.swift in Sources */,

@@ -57,8 +57,9 @@ struct ContentView: View {
   var body: some View {
 //    hView()
 //    kView()
-    mView()
+//    mView() Looks Good, issue with center
 //    nView()
+    oView() // Looks Better, WIP
   }
 }
 
