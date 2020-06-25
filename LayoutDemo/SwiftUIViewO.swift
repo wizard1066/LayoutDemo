@@ -28,12 +28,18 @@ import SwiftUI
 //let viewCalcX = viewMaxX * 0.1
 
 let viewQK = viewMaxY * 0.50
+let viewQH = viewMaxX * 0.20
 
 struct oView: View {
   @State var rainLocation = Alignment.topTrailing
   @State var heartLocation = Alignment.topLeading
   @State var washingMachineLocation = Alignment.bottomLeading
   @State var windLocation = Alignment.bottomTrailing
+  
+  @State var shadowHeart = 1.0
+  @State var shadowRain = 1.0
+  @State var shadowWashingMachine = 1.0
+  @State var shadowWind = 1.0
   
   @State var heartOpactity = 1.0
   @State var rainOpactity = 1.0
@@ -46,8 +52,6 @@ struct oView: View {
   @State var fadeBar = 1.0
   @State var isntListening: Bool = true
   
-  @State var rainOffsetY:CGFloat = 0
-  @State var heartOffsetY:CGFloat = 0
   @State var washingMachineOffsetY:CGFloat = 0
   @State var windOffsetY:CGFloat = 0
   
@@ -59,124 +63,179 @@ struct oView: View {
   @State var tag:Bool = true
   @State var tag2:Bool = false
   @State var centerPoint: CGPoint = .zero
+  @State var doZoom:CGFloat = 1.0
   
-  @State var relocateHeartX: CGFloat = viewQX
-  @State var relocateHeartY: CGFloat = viewQY
-  
-  @State var relocateRainX: CGFloat = viewQX * 3
-  @State var relocateRainY: CGFloat = viewQY
+  @State var zoomFocus = UnitPoint.topLeading
   
   var body: some View {
     
     return ZStack {
-      Color.black
+      BackgroundView()
+      
+      ZStack {
+        ZStack(alignment: heartLocation) {
+          CircularButtonView(image: Icons.heartBeat, size: bSize, isVisible: false, action: {
+            // dummy
+          })
+        }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: heartLocation)
+          .opacity(shadowHeart)
+        
+        ZStack(alignment: rainLocation) {
+          CircularButtonView(image: Icons.rain, size: bSize, isVisible: true, action: {
+            // dummy
+          })
+        }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: rainLocation)
+          .opacity(shadowRain)
+        
+        ZStack(alignment: washingMachineLocation) {
+          CircularButtonView(image: Icons.washingMachine, size: bSize, isVisible: false, action: {
+            // dummy
+          })
+        }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: washingMachineLocation)
+          .opacity(shadowWashingMachine)
+        
+        ZStack(alignment: windLocation) {
+          CircularButtonView(image: Icons.wind, size: bSize, isVisible: false, action: {
+            // dummy
+          })
+        }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: windLocation)
+          .opacity(shadowWind)
+      }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: .center)
+        .border(Color.yellow)
+        .scaleEffect(doZoom, anchor: zoomFocus)
+      
+      //      Color.black
       
       ZStack(alignment: heartLocation) {
         CircularButtonView(image: Icons.heartBeat, size: bSize, isVisible: false, action: {
-          withAnimation {
-            if self.tag {
+          if self.tag {
+            self.zoomFocus = UnitPoint.topLeading
+            self.rainOpactity = 0.0
+            self.windOpactity = 0.0
+            self.washingMachineOpactity = 0.0
+            self.shadowHeart = 0.0
+            withAnimation(.linear(duration: 4)) {
               self.zoomHeart = 3.0
               self.heartLocation = Alignment.center
-              
-              self.rainOpactity = 0.0
-              self.windOpactity = 0.0
-              self.washingMachineOpactity = 0.0
-            } else {
+              self.doZoom = 3.0
+            }
+          } else {
+            withAnimation(.linear(duration: 4)) {
               self.heartLocation = Alignment.topLeading
               self.zoomHeart = 1.0
-              
+              self.doZoom = 1.0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now()+4) {
               self.rainOpactity = 1.0
               self.windOpactity = 1.0
               self.washingMachineOpactity = 1.0
+              self.shadowHeart = 1.0
             }
-            self.tag.toggle()
           }
+          self.tag.toggle()
         })
-        .scaleEffect(zoomHeart)
+          .scaleEffect(zoomHeart)
       }
-      .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - viewQK, alignment: heartLocation)
+      .frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: heartLocation)
       .border(Color.red)
       .opacity(heartOpactity)
       
       
       ZStack(alignment: rainLocation) {
         CircularButtonView(image: Icons.rain, size: bSize, isVisible: false, action: {
-          withAnimation {
-            if self.tag {
+          if self.tag {
+            self.zoomFocus = UnitPoint.topTrailing
+            self.heartOpactity = 0.0
+            self.windOpactity = 0.0
+            self.washingMachineOpactity = 0.0
+            self.shadowRain = 0.0
+            withAnimation(.linear(duration: 4)) {
               self.zoomRain = 3.0
               self.rainLocation = Alignment.center
-              
-              self.heartOpactity = 0.0
-              self.windOpactity = 0.0
-              self.washingMachineOpactity = 0.0
-            } else {
+              self.doZoom = 3.0
+            }
+          } else {
+            withAnimation(.linear(duration: 4)) {
               self.rainLocation = Alignment.topTrailing
               self.zoomRain = 1.0
-              
+              self.doZoom = 1.0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now()+4) {
               self.heartOpactity = 1.0
               self.windOpactity = 1.0
               self.washingMachineOpactity = 1.0
+              self.shadowRain = 1.0
             }
-            self.tag.toggle()
           }
+          self.tag.toggle()
         })
-        .scaleEffect(zoomRain)
+          .scaleEffect(zoomRain)
       }
-      .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - viewQK, alignment: rainLocation)
+      .frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: rainLocation)
       .border(Color.yellow)
       .opacity(rainOpactity)
       
       ZStack(alignment: washingMachineLocation) {
         CircularButtonView(image: Icons.washingMachine, size: bSize, isVisible: false, action: {
-          withAnimation {
-            if self.tag {
-              self.heartOpactity = 0.0
-              self.rainOpactity = 0.0
-              self.windOpactity = 0.0
-              
+          if self.tag {
+            self.zoomFocus = UnitPoint.bottomLeading
+            self.heartOpactity = 0.0
+            self.rainOpactity = 0.0
+            self.windOpactity = 0.0
+            self.shadowWashingMachine = 0.0
+            withAnimation(.linear(duration: 4)) {
               self.zoomWashingMachine = 3.0
               self.washingMachineLocation = Alignment.center
-            } else {
+              self.doZoom = 3.0
+            }
+          } else {
+            withAnimation(.linear(duration: 4)) {
               self.washingMachineLocation = Alignment.bottomLeading
               self.zoomWashingMachine = 1.0
-              
+              self.doZoom = 1.0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now()+4) {
               self.heartOpactity = 1.0
               self.windOpactity = 1.0
               self.rainOpactity = 1.0
+              self.shadowWashingMachine = 1.0
             }
             self.tag.toggle()
           }
         })
           .scaleEffect(zoomWashingMachine)
-      }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - viewQK, alignment: washingMachineLocation)
+      }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: washingMachineLocation)
         .border(Color.red)
         .opacity(washingMachineOpactity)
       
       
       ZStack(alignment: windLocation) {
         CircularButtonView(image: Icons.wind, size: bSize, isVisible: false, action: {
-          withAnimation {
-            if self.tag {
-              self.heartOpactity = 0.0
-              self.rainOpactity = 0.0
-              self.washingMachineOpactity = 0.0
-              
+          if self.tag {
+            self.zoomFocus = UnitPoint.bottomTrailing
+            self.heartOpactity = 0.0
+            self.rainOpactity = 0.0
+            self.washingMachineOpactity = 0.0
+            withAnimation(.linear(duration: 4)) {
               self.zoomWind = 3.0
               self.windLocation = Alignment.center
-              
-            } else {
+            }
+          } else {
+            withAnimation(.linear(duration: 4)) {
               self.windLocation = Alignment.bottomTrailing
               self.zoomWind = 1.0
-              
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now()+4) {
               self.heartOpactity = 1.0
               self.rainOpactity = 1.0
               self.washingMachineOpactity = 1.0
             }
-            self.tag.toggle()
           }
+          
+          self.tag.toggle()
         })
           .scaleEffect(zoomWind)
-      }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - viewQK, alignment: windLocation)
+      }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: windLocation)
         .border(Color.red)
         .opacity(windOpactity)
       
@@ -214,10 +273,10 @@ struct oView: View {
         }.position(x: relocateNightNannyX, y: relocateNightNannyY)
       }
       ZStack {
-          Image(systemName: "plus")
-            .frame(width: 32, height: 32, alignment: .center)
-            .foregroundColor(Color.red)
-            .position(x: viewMidX, y: viewQZ)
+        Image(systemName: "plus")
+          .frame(width: 32, height: 32, alignment: .center)
+          .foregroundColor(Color.red)
+          .position(x: viewMidX, y: viewQZ)
       }
       
     }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - viewQY, alignment: .center)
