@@ -31,6 +31,10 @@ let viewCalcY = viewMaxY * 0.1
 let viewCalcX = viewMaxX * 0.1
 
 struct mView: View {
+
+  @State var testRun = false
+  @State var rainOffsetX:CGFloat = 0.0
+  @State var rainOffsetY:CGFloat = 0.0
   
   @ObservedObject var viewModel = ViewModels.soundPlayingViewModel
   
@@ -75,6 +79,9 @@ struct mView: View {
   
   @State var fadeBar = 1.0
   @State var isntListening: Bool = true
+  
+  @State private var tap = false
+  @State private var bottomRect: CGRect = .zero
   
   
   var body: some View {
@@ -196,12 +203,13 @@ struct mView: View {
               }
             }
           }.position(CGPoint(x: newHeartX, y: newHeartY))
+          .rectReader($bottomRect, in: .named("main"))
             .onAppear {
               self.zoomFocus = UnitPoint.topLeading
               
               withAnimation(.linear(duration: 1.0)) {
-                self.newHeartX = viewMidX / bZoom
-                self.newHeartY = viewQZ / bZoom
+                self.newHeartY = (viewMaxY * 0.45) / bZoom - 16
+                self.newHeartX = (viewMaxX * 0.165)
                 self.zoomHeart = bZoom
               }
               
@@ -228,14 +236,17 @@ struct mView: View {
                 self.isVisibleRain = true
               }
             }
-          }.position(CGPoint(x: newRainX, y: newRainY))
+          }
+          .offset(x: rainOffsetX, y: rainOffsetY)
+          .position(CGPoint(x: newRainX, y: newRainY))
+          .rectReader($bottomRect, in: .named("main"))
             .onAppear {
               self.zoomFocus = UnitPoint.topTrailing
-              
+              // The magic number 16 is the safe area on an iPhone 11
               withAnimation(.linear(duration: 1.0)) {
-                self.newRainX = viewCalcX * 8.35
-                self.newRainY = viewCalcY * 1.34
-                self.zoomRain = 3.0
+                self.newRainX = (viewMaxX * 0.83)
+                self.newRainY = (viewMaxY * 0.45) / bZoom - 16
+                self.zoomRain = bZoom
                 self.fadeBar = 1
               }
               
@@ -264,13 +275,18 @@ struct mView: View {
               }
             }
           }.position(CGPoint(x: newWashingMachineX, y: newWashingMachineY))
+          .rectReader($bottomRect, in: .named("main"))
             .onAppear {
             self.zoomFocus = UnitPoint.bottomLeading
               withAnimation(.linear(duration: 1.0)) {
-                self.newWashingMachineX = viewCalcX * 1.65
-                self.newWashingMachineY = viewCalcY * 7.41
-                self.zoomWashingMachine = 3
+                self.newWashingMachineY = (viewMaxY * 0.74)
+                self.newWashingMachineX = (viewMaxX * 0.165)
+                self.zoomWashingMachine = bZoom
                 self.fadeBar = 1
+              }
+              
+              DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                print("self.bottomRect.width ",self.bottomRect.height,viewMaxY,viewCalcY * 7.41)
               }
               
           }.scaleEffect(zoomWashingMachine, anchor: .bottomLeading)
@@ -297,12 +313,13 @@ struct mView: View {
               }
             }
           }.position(CGPoint(x: newWindX, y: newWindY))
+          .rectReader($bottomRect, in: .named("main"))
             .onAppear {
               self.zoomFocus = UnitPoint.bottomTrailing
               withAnimation(.linear(duration: 1.0)) {
-                self.newWindX = viewCalcX * 8.3
-                self.newWindY = viewCalcY * 7.41
-                self.zoomWind = 3
+                self.newWindX = (viewMaxX * 0.83)
+                self.newWindY = (viewMaxY * 0.74)
+                self.zoomWind = bZoom
                 self.fadeBar = 1
               }
           }
@@ -333,13 +350,32 @@ struct mView: View {
         }.position(x: relocateNightNannyX, y: relocateNightNannyY)
       }
       ZStack {
-        Image(systemName: "plus")
-          .frame(width: 32, height: 32, alignment: .center)
-          .foregroundColor(Color.red)
-          .position(x: viewMidX, y: viewQZ)
+//        if testRun {
+          Image(systemName: "plus")
+            .frame(width: 32, height: 32, alignment: .center)
+            .foregroundColor(Color.red)
+            .position(x: viewMidX, y: viewQZ)
+//            .rectReader($bottomRect, in: .named("main"))
+//        }
       }
-    }
+    }.coordinateSpace(name: "main")
   }
+}
+
+// code SO https://stackoverflow.com/questions/60494745/swiftui-set-position-to-center-of-different-view
+// only using it to debug/understand what is happening within the animation @ this point
+
+extension View {
+    func rectReader(_ binding: Binding<CGRect>, in space: CoordinateSpace) -> some View {
+        self.background(GeometryReader { (geometry) -> AnyView in
+            let rect = geometry.frame(in: space)
+            DispatchQueue.main.async {
+                binding.wrappedValue = rect
+                print("rect ",rect)
+            }
+            return AnyView(Rectangle().fill(Color.clear))
+        })
+    }
 }
 
 struct ViewM_Previews: PreviewProvider {

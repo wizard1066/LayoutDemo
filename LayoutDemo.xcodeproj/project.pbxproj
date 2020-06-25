@@ -21,6 +21,7 @@
 		7B36E52324A20DD100B7688F /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E52224A20DD100B7688F /* TimerButtonView.swift */; };
 		7B36E52524A23B4400B7688F /* NightNannyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E52424A23B4400B7688F /* NightNannyButton.swift */; };
 		7B36E52724A3347100B7688F /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E52624A3347100B7688F /* ViewModels.swift */; };
+		7B4F18DF24A48EE200815C8A /* SwiftUIViewN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F18DE24A48EE200815C8A /* SwiftUIViewN.swift */; };
 		7B79F693249AABC600C7A2B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F692249AABC600C7A2B3 /* AppDelegate.swift */; };
 		7B79F695249AABC600C7A2B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F694249AABC600C7A2B3 /* SceneDelegate.swift */; };
 		7B79F697249AABC600C7A2B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F696249AABC600C7A2B3 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 		7B36E52224A20DD100B7688F /* TimerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
 		7B36E52424A23B4400B7688F /* NightNannyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightNannyButton.swift; sourceTree = "<group>"; };
 		7B36E52624A3347100B7688F /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		7B4F18DE24A48EE200815C8A /* SwiftUIViewN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewN.swift; sourceTree = "<group>"; };
 		7B79F68F249AABC600C7A2B3 /* LayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B79F692249AABC600C7A2B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B79F694249AABC600C7A2B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				7B36E51224A0868400B7688F /* SwiftUIViewJ.swift */,
 				7B36E51424A0F1D800B7688F /* SwiftUIViewK.swift */,
 				7B36E51624A1EDAE00B7688F /* SwiftUIViewM.swift */,
+				7B4F18DE24A48EE200815C8A /* SwiftUIViewN.swift */,
 				7B36E52624A3347100B7688F /* ViewModels.swift */,
 				7B36E52424A23B4400B7688F /* NightNannyButton.swift */,
 				7B36E52224A20DD100B7688F /* TimerButtonView.swift */,
@@ -191,6 +194,7 @@
 				7B79F693249AABC600C7A2B3 /* AppDelegate.swift in Sources */,
 				7B36E51B24A1EF6F00B7688F /* Colors.swift in Sources */,
 				7B36E52324A20DD100B7688F /* TimerButtonView.swift in Sources */,
+				7B4F18DF24A48EE200815C8A /* SwiftUIViewN.swift in Sources */,
 				7B36E51D24A1F01000B7688F /* Icons.swift in Sources */,
 				7B36E511249FB88F00B7688F /* SwiftUIViewH.swift in Sources */,
 				7B36E50F249F4A6200B7688F /* SwiftUIViewC.swift in Sources */,
