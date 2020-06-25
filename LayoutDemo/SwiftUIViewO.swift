@@ -101,7 +101,6 @@ struct oView: View {
         }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: windLocation)
           .opacity(shadowWind)
       }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: .center)
-        .border(Color.yellow)
         .scaleEffect(doZoom, anchor: zoomFocus)
       
       //      Color.black
@@ -137,7 +136,6 @@ struct oView: View {
           .scaleEffect(zoomHeart)
       }
       .frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: heartLocation)
-      .border(Color.red)
       .opacity(heartOpactity)
       
       
@@ -172,7 +170,6 @@ struct oView: View {
           .scaleEffect(zoomRain)
       }
       .frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: rainLocation)
-      .border(Color.yellow)
       .opacity(rainOpactity)
       
       ZStack(alignment: washingMachineLocation) {
@@ -200,12 +197,11 @@ struct oView: View {
               self.rainOpactity = 1.0
               self.shadowWashingMachine = 1.0
             }
-            self.tag.toggle()
           }
+          self.tag.toggle()
         })
           .scaleEffect(zoomWashingMachine)
       }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: washingMachineLocation)
-        .border(Color.red)
         .opacity(washingMachineOpactity)
       
       
@@ -216,27 +212,29 @@ struct oView: View {
             self.heartOpactity = 0.0
             self.rainOpactity = 0.0
             self.washingMachineOpactity = 0.0
+            self.shadowWind = 0.0
             withAnimation(.linear(duration: 4)) {
               self.zoomWind = 3.0
               self.windLocation = Alignment.center
+              self.doZoom = 3.0
             }
           } else {
             withAnimation(.linear(duration: 4)) {
               self.windLocation = Alignment.bottomTrailing
               self.zoomWind = 1.0
+              self.doZoom = 1.0
             }
             DispatchQueue.main.asyncAfter(deadline: .now()+4) {
               self.heartOpactity = 1.0
               self.rainOpactity = 1.0
               self.washingMachineOpactity = 1.0
+              self.shadowWind = 1.0
             }
           }
-          
           self.tag.toggle()
         })
           .scaleEffect(zoomWind)
       }.frame(width: UIScreen.main.bounds.width - viewQH, height: UIScreen.main.bounds.height - viewQK, alignment: windLocation)
-        .border(Color.red)
         .opacity(windOpactity)
       
       if !tag {
